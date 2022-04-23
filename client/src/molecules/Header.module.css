@@ -1,0 +1,39 @@
+.container {
+    background-color: #282c34;
+    min-height: 8vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    font-size: calc(10px + 2vmin);
+    color: white;
+    font-family: StarJediRounded sans-serif;;
+    padding: 1vh;
+}
+
+.logo {
+    height: 8vmin;
+    pointer-events: none;
+}
+
+
+.title {
+    color: #0F9AD1;
+    text-shadow: 0 0 1px #fff, 0 0 2.5px #fff, 0 0 1px #0f9ad1, 0 0 2.5px #0f9ad1, 0 0 5px #0f9ad1, 0 0 10px #0f9ad1, 0 0 15px #0f9ad1;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .logo {
+        animation: logo-spin infinite 20s linear;
+    }
+}
+
+
+@keyframes logo-spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}

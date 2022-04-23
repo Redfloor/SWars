@@ -1,0 +1,15 @@
+@font-face {
+  font-family: 'SFDistantGalaxy';
+  src: local('SFDistantGalaxy'), url('./resources/fonts/sf-distant-galaxy-font/SfDistantGalaxy-0l3d.ttf') format('truetype');
+  font-weight: normal;
+}
+
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.font-SF {
+  font-family: 'SFDistantGalaxy', sans-serif;
+}
