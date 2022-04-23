@@ -9,13 +9,8 @@ interface Props {
     mass: number;
     gender: string;
     homeworld: string;
-    coords?: Coords
 }
 
-interface Coords {
-    lat: number;
-    lng: number;
-}
 
 const getUnits = (key: keyof Props) => {
     if (key === "mass") return "Kg"
@@ -27,7 +22,6 @@ export const Person = (props: Props) => {
     const [expanded, setExpanded] = React.useState(true)
     let Output = Object.keys(props).map(key => {
         if (key === 'id') return undefined;
-        if (key === 'coords') return undefined;
         //Todo: handle homeworld over gql
         if (key === 'homeworld') return undefined;
         return (

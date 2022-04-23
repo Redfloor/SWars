@@ -1,0 +1,19 @@
+{
+  "name": "server",
+  "version": "0.1.0",
+  "description": "Star Wars Middleware",
+  "main": "index.js",
+  "repository": "https://github.com/Redfloor/SWars",
+  "author": "Dylan Becks",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "apollo-server": "^3.6.7",
+    "graphql": "^16.3.0",
+    "ts-node": "^10.7.0",
+    "typescript": "^4.6.3"
+  },
+  "scripts": {
+    "start": "node --loader ts-node/esm index.ts"
+  }
+}
