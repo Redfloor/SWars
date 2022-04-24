@@ -17,6 +17,15 @@ const testPeople = [{
     homeworld: {
         name: "Alderaan",
     }
+}, {
+    id: 3,
+    name: "Anakin Skywalker",
+    height: 190,
+    mass: 110,
+    gender: "male",
+    homeworld: {
+        name: "Tatooine",
+    }
 }]
 
 export const people = (parent, args, context, info) => {

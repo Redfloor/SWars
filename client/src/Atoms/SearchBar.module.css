@@ -18,11 +18,13 @@
 
 .container > input {
     background-color: #333;
+    border-radius: 10px 2px;
     caret-color: #FFE81F;
     font-size: 20px;
     border: none;
     padding: 10px;
     min-width: 300px;
+    flex-grow: 1;
 }
 
 .container > input, .container > input:active, .container > input:focus {

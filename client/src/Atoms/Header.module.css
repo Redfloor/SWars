@@ -8,7 +8,7 @@
     font-size: calc(10px + 2vmin);
     color: white;
     font-family: StarJediRounded sans-serif;;
-    padding: 1vh;
+    padding: 1vh 10px;
 }
 
 .logo {

@@ -1,34 +1,41 @@
 import * as React from 'react';
 import styles from './Person.module.css'
 
-//Todo: extend this over gql types
-interface Props {
+export interface PersonType {
     id: string;
     name: string;
     height: number;
     mass: number;
     gender: string;
-    homeworld: string;
+    homeworld: {
+        name: string
+    }
 }
 
 
-const getUnits = (key: keyof Props) => {
-    if (key === "mass") return "Kg"
-    if (key === "height") return "CM"
+const getUnits = (key: keyof PersonType) => {
+    if (key === "mass") return " Kg"
+    if (key === "height") return " CM"
     return ""
 }
 
-export const Person = (props: Props) => {
+export const Person = (props: PersonType) => {
     const [expanded, setExpanded] = React.useState(true)
     let Output = Object.keys(props).map(key => {
-        if (key === 'id') return undefined;
-        //Todo: handle homeworld over gql
-        if (key === 'homeworld') return undefined;
+        if (key == "__typename" || key === 'id') {
+            return undefined;
+        }
+        if (key === 'homeworld') {
+            return <div className={styles.row}>
+                <p>{key}:</p>
+                <p>{`${props.homeworld.name}`}</p>
+            </div>
+        }
         return (
             <div className={styles.row}>
                 <p>{key}:</p>
                 {/*@ts-expect-error TS2322*/}
-                <p>{`${props[key as keyof Props]}${getUnits(key)}`}</p>
+                <p>{`${props[key as keyof PersonType]}${getUnits(key)}`}</p>
             </div>
         )
         })
