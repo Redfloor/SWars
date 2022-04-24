@@ -1,14 +1,15 @@
 [build]
 publish = "/"
 
-command = "yarn start"
+#command = "yarn start"
 
 [[plugins]]
 package = "@netlify/plugin-lighthouse"
 
 [context.production]
 publish = "/"
-#command = "yarn && yarn start"
+command = "yarn start"
+
 environment = { NODE_VERSION = "16.14.2" }
 
 [[headers]]
