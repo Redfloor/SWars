@@ -26,7 +26,7 @@ export const SearchBar = ({onSearch}: Props) => {
                     }
                 }
             />
-            <span className="material-icons-round" onClick={() => onSearch(search)}>search</span>
+            <button className="material-icons-round" onClick={() => onSearch(search)} type={"button"}>search</button>
         </div>
     )
 }

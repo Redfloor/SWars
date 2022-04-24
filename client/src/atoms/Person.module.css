@@ -41,4 +41,9 @@
     .box {
         width: calc(100vw - 20px);;
     }
+    .box:hover {
+        width: calc(100vw - 10px);
+        margin: 10px 5px;
+        box-shadow: 0 0 1px #0f9ad1, 0 0 2.5px #0f9ad1, 0 0 5px #0f9ad1, 0 0 10px #0f9ad1, 0 0 15px #0f9ad1;
+    }
 }
