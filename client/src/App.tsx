@@ -7,7 +7,7 @@ import {Search} from "./molecules/Search";
 
 const client = new ApolloClient({
     cache: new InMemoryCache(),
-    uri: "http://localhost:4000/graphql"
+    uri: "https://aerial-malachite-boat.glitch.me/"
 });
 
 
