@@ -7,7 +7,7 @@ import {Search} from "./molecules/Search";
 
 const client = new ApolloClient({
     cache: new InMemoryCache(),
-    uri: "http://192.168.0.5:4000/graphql"
+    uri: "http://localhost:4000/graphql"
 });
 
 
