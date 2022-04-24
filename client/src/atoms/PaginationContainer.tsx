@@ -12,7 +12,7 @@ export const PaginationContainer = ({page, total, load}:Props) => {
     let buttons = []
     for (let i = 1; i < pages; i++) {
         buttons.push(
-            <button className={i==page ? styles.buttonActive : styles.button} onClick={() => load(i)} key={`load:${i}`}>{i}</button>
+            <button className={i===page ? styles.buttonActive : styles.button} onClick={() => load(i)} key={`load:${i}`}>{i}</button>
         )
     }
     return <div className={styles.paginationContainer}>

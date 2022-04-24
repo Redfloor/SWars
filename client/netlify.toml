@@ -8,7 +8,7 @@ package = "@netlify/plugin-lighthouse"
 
 [context.production]
 publish = "build/"
-command = "yarn && yarn start"
+#command = "yarn && yarn start"
 environment = { NODE_VERSION = "16.14.2" }
 
 [[headers]]

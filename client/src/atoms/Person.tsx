@@ -22,7 +22,7 @@ const getUnits = (key: keyof PersonType, value?: string | number) => {
 
 export const Person = (props: PersonType) => {
     //todo: Pretty dynamic height nonsense
-    const [expanded, setExpanded] = React.useState(true)
+    // const [expanded, setExpanded] = React.useState(true)
     let Output = Object.keys(props).map(key => {
         if (key === "__typename" || key === 'id') {
             return undefined;
@@ -48,7 +48,7 @@ export const Person = (props: PersonType) => {
         className={styles.box}
         // onClick={()=> setExpanded(!expanded)}
     >
-        {expanded ? Output : Output[0]}
+        {Output}
     </div>
     )
 }
