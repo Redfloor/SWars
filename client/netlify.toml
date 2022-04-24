@@ -1,0 +1,26 @@
+[build]
+publish = "build/"
+
+command = "yarn start"
+
+[[plugins]]
+package = "@netlify/plugin-lighthouse"
+
+[context.production]
+publish = "build/"
+command = "yarn && yarn start"
+environment = { NODE_VERSION = "14.15.3" }
+
+[[headers]]
+for = "/*"
+
+[headers.values]
+X-Frame-Options = "DENY"
+X-XSS-Protection = "1; mode=block"
+Content-Security-Policy = "frame-ancestors https://www.facebook.com"
+
+cache-control = '''
+  max-age=0,
+  no-cache,
+  no-store,
+  must-revalidate'''
