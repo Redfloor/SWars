@@ -1,7 +1,5 @@
 {
   "name": "SWars",
   "version": "1.0.0",
-  "dependencies": {
-
-  }
+  "engines": { "node": "16.6.1" }
 }
