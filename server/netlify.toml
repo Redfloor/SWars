@@ -1,7 +1,7 @@
 [build]
 publish = "/"
 
-#command = "yarn start"
+command = "yarn"
 
 [[plugins]]
 package = "@netlify/plugin-lighthouse"
