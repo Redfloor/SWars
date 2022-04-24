@@ -9,7 +9,7 @@ package = "@netlify/plugin-lighthouse"
 [context.production]
 publish = "build/"
 command = "yarn && yarn start"
-environment = { NODE_VERSION = "14.15.3" }
+environment = { NODE_VERSION = "16.14.2" }
 
 [[headers]]
 for = "/*"
