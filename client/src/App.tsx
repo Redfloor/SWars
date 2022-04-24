@@ -2,7 +2,7 @@ import React from 'react';
 import {ApolloClient, ApolloProvider, InMemoryCache} from '@apollo/client';
 
 import './App.css';
-import {Header} from './Atoms/Header';
+import {Header} from './atoms/Header';
 import {Search} from "./molecules/Search";
 
 const client = new ApolloClient({

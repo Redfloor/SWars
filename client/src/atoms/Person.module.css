@@ -1,5 +1,5 @@
 .box {
-    width: calc(50vw - 20px);
+    width: calc(50vw - 30px);
     margin: 10px;
     background: #333;
     border-radius: 10px 2px;
@@ -7,10 +7,12 @@
     box-sizing: border-box;
     border: solid 3px #2faaf1;
     box-shadow: 0 0 0.5px #0f9ad1, 0 0 1.25px #0f9ad1, 0 0 2.5px #0f9ad1, 0 0 5px #0f9ad1, 0 0 7.5px #0f9ad1;
-    transition: linear 0.4s;
+    transition: linear 0.2s;
 }
 
 .box:hover {
+    width: calc(50vw - 20px);
+    margin: 10px 5px;
     box-shadow: 0 0 1px #0f9ad1, 0 0 2.5px #0f9ad1, 0 0 5px #0f9ad1, 0 0 10px #0f9ad1, 0 0 15px #0f9ad1;
 }
 

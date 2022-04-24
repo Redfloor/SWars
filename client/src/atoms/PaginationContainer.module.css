@@ -1,0 +1,47 @@
+.paginationContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    box-sizing: border-box;
+    padding: 0 15px;
+    flex-grow: 1;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+.button {
+    min-width: 60px;
+    border-radius: 10px 2px;
+    border: solid 3px #2faaf1;
+    box-shadow: 0 0 0.5px #0f9ad1, 0 0 1.25px #0f9ad1, 0 0 2.5px #0f9ad1, 0 0 5px #0f9ad1, 0 0 7.5px #0f9ad1;
+    margin: 10px;
+    box-sizing: border-box;
+    background-color: #333;
+    padding: 10px;
+    font-size: 20px;
+    color: #0f9ad1;
+    transition: linear 0.4s, width 0s;
+}
+
+.button:hover {
+    border: solid 3px #FFE81F;
+    box-shadow: 0 0 1px #FFE81F, 0 0 2.5px #FFE81F, 0 0 5px #FFE81F, 0 0 10px #FFE81F, 0 0 15px #FFE81F;
+    background-color: #FFE81F;
+    color: #000;
+}
+
+.buttonActive {
+    composes: button;
+    border: solid 3px #FFE81F;
+    box-shadow: 0 0 1px #FFE81F, 0 0 2.5px #FFE81F, 0 0 5px #FFE81F, 0 0 10px #FFE81F, 0 0 15px #FFE81F;
+    background-color: #000;
+    color: #FFE81F;
+}
+
+.button:first-child {
+    margin-left: 0;
+}
+
+button:last-child {
+    margin-right: 0;
+}

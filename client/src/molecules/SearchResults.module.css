@@ -1,4 +1,17 @@
 .datagrid {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.error {
+    font-size: 20px;
+    color: red;
+    font-family: "Arial Black", sans-serif;
+}
+
+.message {
+    font-size: 20px;
+    color: #FFE81F;
+    font-family: "Arial Black", sans-serif;
 }

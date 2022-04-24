@@ -1,5 +1,13 @@
 const {gql} = require("apollo-server");
 export const typeDefs = gql`
+
+    
+type PeopleConnection {
+    edges: [Person]
+    totalCount: Int
+    next: Boolean
+}
+    
 type Planet {
     name: String
 }
@@ -7,13 +15,12 @@ type Planet {
 type Person {
     id: Int!
     name: String
-    height: Int
-    mass: Int
+    height: String
+    mass: String
     gender: String
-    homeWorld: Planet
+    homeworld: Planet
 }
 
 type Query {
-    people(name: String): [Person]
-    planets: [Planet]
+    peopleConnection(name: String, page: Int): PeopleConnection
 }`

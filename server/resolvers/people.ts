@@ -1,41 +1,47 @@
+import fetch from 'node-fetch'
 
-const testPeople = [{
-    id: 1,
-    name: "Luke Skywalker",
-    height: 177,
-    mass: 77,
-    gender: "male",
-    homeworld: {
-        name: "Tatooine",
-    }
-}, {
-    id: 2,
-    name: "Leia Organa",
-    height: 163,
-    mass: 63,
-    gender: "female",
-    homeworld: {
-        name: "Alderaan",
-    }
-}, {
-    id: 3,
-    name: "Anakin Skywalker",
-    height: 190,
-    mass: 110,
-    gender: "male",
-    homeworld: {
-        name: "Tatooine",
-    }
-}]
-
-export const people = (parent, args, context, info) => {
-    if (args && args.name){
+export const peopleConnection = async (parent, args, _context, _info) => {
+    let targetApi = "https://swapi.dev/api/people/"
+    if (args) {
         const name = args.name;
-        console.log({name})
-        //todo just run this through search, no reason to get fancy with it on this level
-        const out = testPeople.filter(person => person.name.indexOf(name) !== -1)
-        console.log({out})
-        return out;
+        const page = args.page;
+        if (name && page) {
+            targetApi += `?search=${name}&page=${page}`
+        } else if (name){
+            targetApi += `?search=${name}`
+        } else if (page) {
+            targetApi+= `?page=${page}`
+        }
     }
-    return testPeople;
+
+    const response = await fetch(targetApi,
+        {method: 'GET',}).then((res) => {
+        return res.json();
+    })
+    const results = response.results
+
+    return {
+        edges: results ? edges(results) : [],
+        totalCount: response.count,
+        next: response.next !== null
+    }
+}
+
+export const edges = async (results) => {
+    return results.map(async r=> {
+        const homeworld = await fetch(r.homeworld,
+            {method: 'GET',}).then((res) => {
+            return res.json();
+        })
+        return {
+        id:parseInt( r.url.replace('https://swapi.dev/api/people/','')),
+        name: r.name,
+        height: r.height,
+        mass: r.mass,
+        gender: r.gender,
+            //todo chain resolver
+        homeworld: {
+            name: homeworld.name
+        }
+    }})
 }
